@@ -26,7 +26,7 @@
       --border: rgba(0,217,255,0.1);
       --border-bright: rgba(0,217,255,0.35);
       --text: #E8EDF8;
-      --muted: #6B7A99;
+      --muted: #8A9BB8;
       --green: #00D97E;
       --red: #FF4D6A;
       --purple: #7B5FFF;
@@ -221,20 +221,19 @@
     }
 
     /* HOW IT WORKS */
-    .how-steps { display: flex; flex-direction: column; max-width: 700px; margin: 0 auto; }
+    .how-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; max-width: 860px; margin: 0 auto; background: var(--border); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; }
     .how-step {
-      display: flex; gap: 28px; align-items: flex-start;
-      padding: 28px 0; border-bottom: 1px solid var(--border); transition: all 0.2s;
+      display: flex; flex-direction: column; gap: 16px;
+      padding: 40px 36px; background: var(--bg2); transition: background 0.25s;
     }
-    .how-step:hover .step-num { border-color: var(--cyan); color: var(--cyan); box-shadow: 0 0 16px rgba(0,217,255,0.2); }
+    .how-step:hover { background: rgba(255,255,255,0.03); }
+    .how-step.full-width { grid-column: 1 / -1; }
     .step-num {
-      width: 44px; height: 44px; min-width: 44px; border-radius: 50%;
-      border: 1px solid var(--border); display: flex; align-items: center; justify-content: center;
-      font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--muted);
-      transition: all 0.2s; margin-top: 2px;
+      font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.18em;
+      color: var(--cyan); opacity: 0.7; text-transform: uppercase;
     }
-    .step-content h3 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.15rem; margin-bottom: 6px; letter-spacing: 0.02em; }
-    .step-content p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+    .step-content h3 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.35rem; margin-bottom: 8px; letter-spacing: 0.01em; line-height: 1.2; }
+    .step-content p { font-size: 0.875rem; color: var(--muted); line-height: 1.7; max-width: 340px; }
 
     /* ALERTS PREVIEW */
     #preview { background: var(--bg2); }
@@ -341,6 +340,14 @@
     }
     .disclaimer-box h3 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.78rem; color: #FFC107; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; flex-shrink: 0; }
     .disclaimer-box p { font-size: 0.75rem; color: var(--muted); line-height: 1.6; }
+
+    /* CLOSING CTA */
+    #cta-final { background: var(--bg2); border-top: 1px solid var(--border); }
+    .cta-final-inner { max-width: 720px; margin: 0 auto; padding: 120px 5%; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+    .cta-final-inner h2 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.1; margin: 0; }
+    .cta-final-inner p { font-size: 1rem; color: var(--muted); line-height: 1.75; max-width: 480px; margin: 0; }
+    .cta-final-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
+    .cta-final-note { font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; color: var(--muted); opacity: 0.6; text-transform: uppercase; margin-top: 4px; }
 
     /* FOOTER */
     footer {
@@ -454,15 +461,15 @@
 
   <!-- HERO -->
   <section id="hero">
-    <div class="hero-eyebrow">Premium Discord Trading Community</div>
+    <div class="hero-eyebrow">The Edge. Delivered Daily.</div>
     <h1>
-      <span class="line-1">Where Smart Money</span>
-      <span class="line-2">Follows The Signal</span>
+      <span class="line-1">Read the Market.</span>
+      <span class="line-2">Before It Moves.</span>
     </h1>
-    <p class="hero-sub">Daily watchlists, technical analysis alerts, and real-time trade setups — right at your fingertips before the market opens.</p>
+    <p class="hero-sub">Precision setups, daily watchlists, and real-time TA alerts — delivered before the bell, every single day.</p>
     <div class="hero-actions">
-      <a href="https://whop.com/signalflowllc/sfprem/" target="_blank" class="btn-primary">Start Today</a>
-      <a href="#preview" class="btn-outline">See Analyst Signals</a>
+      <a href="https://whop.com/signalflowllc/sfprem/" target="_blank" class="btn-primary">Unlock Access</a>
+      <a href="#preview" class="btn-outline">See Live Signals</a>
     </div>
     <div class="hero-stats">
       <div class="stat">
@@ -471,18 +478,13 @@
       </div>
       <div class="stat-divider"></div>
       <div class="stat">
-        <span class="stat-number">Daily</span>
-        <span class="stat-label">Watchlists</span>
+        <span class="stat-number">3–4</span>
+        <span class="stat-label">Setups Daily</span>
       </div>
       <div class="stat-divider"></div>
       <div class="stat">
-        <span class="stat-number">Weekly</span>
-        <span class="stat-label">Setups</span>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat">
-        <span class="stat-number">Live</span>
-        <span class="stat-label">TA Alerts</span>
+        <span class="stat-number">52</span>
+        <span class="stat-label">Weekly Plans / Year</span>
       </div>
     </div>
   </section>
@@ -519,24 +521,24 @@
     <div class="section-pad">
       <div class="features-header reveal">
         <div class="section-label">What's Included</div>
-        <h2>Stop Guessing. <span>Start Winning.</span></h2>
+        <h2>Everything you need. <span>Nothing you don't.</span></h2>
         <p class="section-sub">Weekly strategy, daily execution, and intraday opportunity — all at your fingertips the moment it matters.</p>
       </div>
       <div class="features-grid reveal">
         <div class="feature-card">
-          <div class="feature-icon">📅</div>
+          <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--cyan)"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
           <h3>Daily Watchlist</h3>
           <p>Pre-market briefing every morning before the bell. Key levels, 3–4 long/short setups, earnings calendar, and economic events. Followed by a recap once the market closes.</p>
           <span class="feature-tag">Before Market Open</span>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">📊</div>
+          <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--cyan)"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
           <h3>Technical Analysis</h3>
           <p>Intraday chart breakdowns on high-momentum tickers. Trendline resistance, support levels, pattern completions, and annotated entries/exits posted throughout the week.</p>
           <span class="feature-tag">Throughout The Week</span>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🔄</div>
+          <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--cyan)"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></div>
           <h3>Weekly Watchlist</h3>
           <p>Automated Sunday watchlist covering key setups and levels heading into each week. Start every Monday with a structured plan rather than reacting to the open.</p>
           <span class="feature-tag">Every Sunday</span>
@@ -546,54 +548,40 @@
   </section>
 
   <!-- HOW IT WORKS -->
-  <section id="how-it-works" style="background: var(--bg);">
+  <section id="how-it-works" style="background: #0f1829;">
     <div class="section-pad">
       <div class="features-header reveal">
         <div class="section-label">How It Works</div>
         <h2>Simple setup. <span>Instant access.</span></h2>
-        <p class="section-sub">From checkout to your first alert in under 10 minutes.</p>
+        <p class="section-sub">Less setup. More signal.</p>
       </div>
       <div class="how-steps reveal">
         <div class="how-step">
-          <div class="step-num">01</div>
+          <div class="step-num">Step 01</div>
           <div class="step-content">
             <h3>Join through Whop</h3>
-            <p>Choose your plan — monthly or annual — and complete checkout securely through Whop. No hidden fees, cancel anytime.</p>
+            <p>Monthly or annual. Checkout takes 60 seconds. No hidden fees — cancel anytime.</p>
           </div>
         </div>
         <div class="how-step">
-          <div class="step-num">02</div>
+          <div class="step-num">Step 02</div>
           <div class="step-content">
-            <h3>Connect your Discord</h3>
-            <p>After checkout, link your Discord account through Whop. Takes 30 seconds.</p>
+            <h3>Connect Discord</h3>
+            <p>Link your Discord account through Whop. Your member role is granted instantly — no waiting, no approval.</p>
           </div>
         </div>
         <div class="how-step">
-          <div class="step-num">03</div>
+          <div class="step-num">Step 03</div>
           <div class="step-content">
-            <h3>Get instant role access</h3>
-            <p>Your member role is granted automatically — no waiting, no manual approval. You're in immediately.</p>
+            <h3>Get your watchlists</h3>
+            <p>Every Sunday evening and each morning before the bell — curated setups with key levels, earnings, and macro events already mapped out.</p>
           </div>
         </div>
         <div class="how-step">
-          <div class="step-num">04</div>
+          <div class="step-num">Step 04</div>
           <div class="step-content">
-            <h3>Read the daily watchlist before market open</h3>
-            <p>Each morning before the bell you receive specific long and short setups with key levels, earnings, and economic events to watch.</p>
-          </div>
-        </div>
-        <div class="how-step">
-          <div class="step-num">05</div>
-          <div class="step-content">
-            <h3>Check the weekly watchlist every Sunday</h3>
-            <p>Every Sunday evening a watchlist drops covering the top setups heading into the week. Plan ahead.</p>
-          </div>
-        </div>
-        <div class="how-step" style="border-bottom:none;">
-          <div class="step-num">06</div>
-          <div class="step-content">
-            <h3>Follow alerts with your own risk management</h3>
-            <p>Throughout the week technical analysis alerts are posted on high-momentum tickers. You decide what fits your strategy and risk tolerance — always trade responsibly.</p>
+            <h3>Trade on your terms</h3>
+            <p>Real-time alerts on high-momentum tickers, all week long. You decide what fits your strategy and risk tolerance.</p>
           </div>
         </div>
       </div>
@@ -601,7 +589,7 @@
   </section>
 
   <!-- RESULTS -->
-  <section id="results" style="background: linear-gradient(180deg, var(--bg2) 0%, var(--bg) 100%);">
+  <section id="results" style="background: var(--bg2);">
     <div class="results-pad">
       <div class="results-head reveal">
         <div class="win-section-label">RESULTS</div>
@@ -688,8 +676,8 @@
       <div class="preview-layout">
         <div class="reveal">
           <div class="section-label left">Analyst Signals</div>
-          <h2>Real analysis.<br /><span>Yours to act on.</span></h2>
-          <p class="section-sub" style="margin-top:14px;">Specific price levels, annotated charts, and clear context — not vague market commentary. You decide what to do with it.</p>
+          <h2>This is what<br /><span>members wake up to.</span></h2>
+          <p class="section-sub" style="margin-top:14px;">Specific price levels, annotated charts, and clear context — posted before the bell, every single day. Not vague commentary. Actual setups.</p>
           <p style="margin-top:28px;font-size:0.82rem;color:var(--muted);">Every alert, every setup, every watchlist — the moment we post it.</p>
           <a href="#pricing" class="btn-primary" style="display:inline-block;margin-top:28px;">Unlock All Signals</a>
         </div>
@@ -739,13 +727,14 @@
         <div class="section-label">Membership</div>
         <h2>Simple, <span>transparent</span> pricing.</h2>
         <p class="section-sub">Cancel anytime. No hidden fees. Instant access.</p>
+        <p style="margin-top:12px;font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.12em;color:var(--cyan);opacity:0.8;">⚡ NEXT WEEKLY WATCHLIST DROPS SUNDAY</p>
       </div>
       <div class="plans-grid reveal">
         <!-- Monthly -->
         <div class="plan-card">
           <div class="plan-name">Monthly</div>
           <div class="plan-price"><sup>$</sup>50</div>
-          <div class="plan-period">per month</div>
+          <div class="plan-period">per month &nbsp;·&nbsp; <span style="color:var(--cyan);font-size:0.78rem;">$1.67/day</span></div>
           <div class="plan-desc">Full access, billed monthly. Cancel anytime.</div>
           <div class="plan-divider"></div>
           <ul class="plan-features">
@@ -754,7 +743,7 @@
             <li>Weekly automated watchlist</li>
             <li>Private Discord community</li>
           </ul>
-          <a href="https://whop.com/signalflowllc/sfprem-monthly/" target="_blank" class="btn-plan btn-plan-ghost">Get Started</a>
+          <a href="https://whop.com/signalflowllc/sfprem-monthly/" target="_blank" class="btn-plan btn-plan-ghost">Unlock Access</a>
         </div>
         <!-- Annual -->
         <div class="plan-card featured">
@@ -779,8 +768,8 @@
       <!-- Discord strip -->
       <div class="discord-strip reveal">
         <div>
-          <h4>Already a trader? Come check us out first.</h4>
-          <p>Join the free Discord to see the community before you commit.</p>
+          <h4>Not ready to commit? That's fine.</h4>
+          <p>Join the free Discord and see what you're missing before you decide.</p>
         </div>
         <a href="https://discord.gg/HdnrQ4xrrm" target="_blank" class="btn-discord">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.001.022.015.04.036.053a19.952 19.952 0 0 0 6.073 3.072.078.078 0 0 0 .084-.026c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.201 13.201 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.072.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
@@ -790,13 +779,17 @@
     </div>
   </section>
 
-  <!-- DISCLAIMER -->
-  <section id="disclaimer">
-    <div class="section-pad" style="padding-top:40px;padding-bottom:60px;">
-      <div class="disclaimer-box">
-        <h3>⚠️ Risk Disclaimer</h3>
-        <p>All content provided by SignalFlow is for educational and informational purposes only. Nothing posted constitutes financial advice, investment advice, or a recommendation to buy or sell any security. Trading involves significant risk — only trade with capital you can afford to lose. Past performance is not indicative of future results. Please consult a licensed financial professional before making any trading or investment decisions.</p>
+  <!-- CLOSING CTA -->
+  <section id="cta-final">
+    <div class="cta-final-inner reveal">
+      <div class="section-label">Get Started</div>
+      <h2>The market opens<br><span>whether you're ready or not.</span></h2>
+      <p>Join 500+ members who start every trading day with a plan — not a guess.</p>
+      <div class="cta-final-actions">
+        <a href="https://whop.com/signalflowllc/sfprem/" target="_blank" class="btn-primary">Unlock Access</a>
+        <a href="https://discord.gg/HdnrQ4xrrm" target="_blank" class="btn-outline">Join Free Discord</a>
       </div>
+      <span class="cta-final-note">Cancel anytime &nbsp;·&nbsp; No hidden fees &nbsp;·&nbsp; Instant access</span>
     </div>
   </section>
 
@@ -810,6 +803,7 @@
         <a href="https://discord.gg/HdnrQ4xrrm" target="_blank">Discord</a>
       </div>
       <p>© 2026 SignalFlow. All rights reserved.</p>
+      <p style="font-size:0.72rem;color:var(--muted);opacity:0.5;margin-top:12px;line-height:1.6;max-width:640px;">All content is for educational and informational purposes only. Nothing posted constitutes financial advice or a recommendation to buy or sell any security. Trading involves significant risk — only trade with capital you can afford to lose. Past performance is not indicative of future results.</p>
     </div>
   </footer>
 
