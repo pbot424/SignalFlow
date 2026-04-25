@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "mcp__Claude_in_Chrome__navigate",
+      "mcp__Claude_in_Chrome__browser_batch",
+      "Bash(powershell -Command \"Compress-Archive -Path '.\\\\*' -DestinationPath '.\\\\signalflow-website.zip' -Force\")",
+      "Bash(powershell -Command \"Compress-Archive -Path '.\\\\index.html','.\\\\logo.html','.\\\\banner.html' -DestinationPath '.\\\\signalflow-website.zip' -Force\")",
+      "Bash(powershell -Command \"Compress-Archive -Path '.\\\\index.html' -DestinationPath '.\\\\signalflow-website.zip' -Force\")",
+      "Bash(powershell -Command \"Compress-Archive -Path '.\\\\index.html','.\\\\privacy.html','.\\\\tos.html' -DestinationPath '.\\\\signalflow-website.zip' -Force\")",
+      "mcp__Claude_Preview__preview_start",
+      "WebFetch(domain:cdn.trendsetters.cloudflowventures.com)",
+      "mcp__Claude_in_Chrome__get_page_text",
+      "mcp__Claude_in_Chrome__find",
+      "mcp__Claude_in_Chrome__read_page",
+      "mcp__Claude_in_Chrome__javascript_tool",
+      "Bash(cp \"C:/Users/hunga/Downloads/jnj-before.png\" \"C:/Users/hunga/OneDrive/Desktop/WEBSITE/images/jnj-before.png\")",
+      "Bash(cp \"C:/Users/hunga/Downloads/jnj-after.png\" \"C:/Users/hunga/OneDrive/Desktop/WEBSITE/images/jnj-after.png\")",
+      "Bash(cp \"C:/Users/hunga/Downloads/tsla-before.png\" \"C:/Users/hunga/OneDrive/Desktop/WEBSITE/images/tsla-before.png\")",
+      "Bash(cp \"C:/Users/hunga/Downloads/tsla-after.png\" \"C:/Users/hunga/OneDrive/Desktop/WEBSITE/images/tsla-after.png\")",
+      "PowerShell(Add-Type -AssemblyName System.IO.Compression.FileSystem; $zip = [System.IO.Compression.ZipFile]::OpenRead\\('C:\\\\Users\\\\hunga\\\\OneDrive\\\\Desktop\\\\WEBSITE\\\\signalflow-website.zip'\\); $zip.Entries | Select-Object FullName; $zip.Dispose\\(\\))",
+      "PowerShell($zip = [System.IO.Compression.ZipFile]::OpenRead\\('C:\\\\Users\\\\hunga\\\\OneDrive\\\\Desktop\\\\WEBSITE\\\\signalflow-website.zip'\\); $entries = $zip.Entries | ForEach-Object { $_.FullName }; $zip.Dispose\\(\\); $entries)",
+      "PowerShell(Compress-Archive -Path 'C:\\\\Users\\\\hunga\\\\OneDrive\\\\Desktop\\\\WEBSITE\\\\index.html','C:\\\\Users\\\\hunga\\\\OneDrive\\\\Desktop\\\\WEBSITE\\\\privacy.html','C:\\\\Users\\\\hunga\\\\OneDrive\\\\Desktop\\\\WEBSITE\\\\tos.html' -DestinationPath 'C:\\\\Users\\\\hunga\\\\OneDrive\\\\Desktop\\\\WEBSITE\\\\signalflow-website.zip' -Force; Write-Host \"Done - $\\([Math]::Round\\(\\(Get-Item 'C:\\\\Users\\\\hunga\\\\OneDrive\\\\Desktop\\\\WEBSITE\\\\signalflow-website.zip'\\).Length / 1MB, 2\\)\\) MB\")",
+      "WebFetch(domain:fonts.googleapis.com)",
+      "PowerShell(Compress-Archive -Path 'C:\\\\Users\\\\hunga\\\\OneDrive\\\\Desktop\\\\WEBSITE\\\\index.html','C:\\\\Users\\\\hunga\\\\OneDrive\\\\Desktop\\\\WEBSITE\\\\privacy.html','C:\\\\Users\\\\hunga\\\\OneDrive\\\\Desktop\\\\WEBSITE\\\\tos.html' -DestinationPath 'C:\\\\Users\\\\hunga\\\\OneDrive\\\\Desktop\\\\WEBSITE\\\\signalflow-website.zip' -Force; Write-Host \"Zip ready - $\\([Math]::Round\\(\\(Get-Item 'C:\\\\Users\\\\hunga\\\\OneDrive\\\\Desktop\\\\WEBSITE\\\\signalflow-website.zip'\\).Length / 1MB, 2\\)\\) MB\")",
+      "PowerShell($files = Get-ChildItem 'C:\\\\Users\\\\hunga\\\\OneDrive\\\\Desktop\\\\WEBSITE\\\\'; foreach\\($f in $files\\){ Write-Host \"$\\($f.Name\\) $\\($f.Length\\)\" })",
+      "Bash(awk 'NR>=635 && NR<=685' \"C:/Users/hunga/OneDrive/Desktop/SignalFlow/index.html\")",
+      "Bash(awk 'NR>=644 && NR<=684' \"C:/Users/hunga/OneDrive/Desktop/SignalFlow/index.html\")",
+      "Bash(python3 -c ' *)",
+      "Bash(awk -F: '$1>=680 && $1<=685')"
+    ]
+  }
+}
